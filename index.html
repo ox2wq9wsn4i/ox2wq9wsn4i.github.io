@@ -1,0 +1,1156 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>麻豆不打烊 - 视频社区 · 品牌官网 - 看见真实生活的持续播放</title>
+<meta name="description" content="麻豆不打烊官方网站：一个专注真实生活记录与原创影像的品牌视频社区，汇聚创作者、精品内容与持续更新的生活故事，打造值得信赖的内容生态。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232b4a66'/%3E%3Cpath d='M11 9l12 7-12 7V9z' fill='%23e8b04b'/%3E%3C/svg%3E">
+<style>
+:root{
+  --mdb-navy:#17324a;
+  --mdb-slate:#2b4a66;
+  --mdb-steel:#5d7f99;
+  --mdb-mist:#e9eef2;
+  --mdb-paper:#f6f8fa;
+  --mdb-white:#ffffff;
+  --mdb-amber:#e8b04b;
+  --mdb-amber-deep:#c98f2b;
+  --mdb-ink:#16232e;
+  --mdb-line:#d3dde5;
+  --mdb-shadow:0 10px 28px rgba(23,50,74,.10);
+  --mdb-radius:14px;
+  --mdb-head-h:106px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--mdb-head-h) + 12px);}
+body{
+  margin:0;
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color:var(--mdb-ink);
+  background:var(--mdb-paper);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+ul,ol{margin:0;padding:0;list-style:none;}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+h1,h2,h3,h4{margin:0;line-height:1.32;font-weight:700;}
+p{margin:0 0 1em;}
+p:last-child{margin-bottom:0;}
+
+.mdb-skip{position:absolute;left:-9999px;top:0;background:var(--mdb-navy);color:#fff;padding:10px 16px;z-index:999;}
+.mdb-skip:focus{left:12px;top:12px;}
+
+/* ===== 吸顶公告 + 页头 ===== */
+.mdb-sticky{position:sticky;top:0;z-index:80;}
+.mdb-announce{
+  background:linear-gradient(90deg,var(--mdb-navy),var(--mdb-slate));
+  color:#dbe7ef;
+  font-size:13px;
+  letter-spacing:.3px;
+}
+.mdb-announce-in{
+  max-width:1240px;margin:0 auto;padding:8px 20px;
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+}
+.mdb-announce-tag{
+  flex:none;background:var(--mdb-amber);color:var(--mdb-navy);
+  font-weight:700;font-size:11px;padding:2px 9px;border-radius:20px;letter-spacing:1px;
+}
+.mdb-announce-text{flex:1 1 auto;min-width:200px;}
+.mdb-announce-link{flex:none;color:var(--mdb-amber);font-weight:600;font-size:12.5px;border-bottom:1px dashed rgba(232,176,75,.6);}
+.mdb-announce-link:hover{color:#fff;border-bottom-color:#fff;}
+
+.mdb-header{
+  background:rgba(246,248,250,.94);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--mdb-line);
+}
+.mdb-header-in{
+  max-width:1240px;margin:0 auto;padding:14px 20px;
+  display:flex;align-items:center;gap:26px;flex-wrap:wrap;
+}
+.mdb-brand{display:flex;align-items:center;gap:10px;flex:none;}
+.mdb-brand-mark{
+  width:38px;height:38px;border-radius:11px;flex:none;
+  background:linear-gradient(135deg,var(--mdb-slate),var(--mdb-navy));
+  display:grid;place-items:center;
+}
+.mdb-brand-mark svg{width:20px;height:20px;}
+.mdb-brand-name{font-size:19px;font-weight:800;letter-spacing:.5px;color:var(--mdb-navy);}
+.mdb-brand-sub{display:block;font-size:10.5px;letter-spacing:2.4px;color:var(--mdb-steel);font-weight:600;}
+
+.mdb-nav{flex:1 1 auto;}
+.mdb-nav-list{display:flex;gap:22px;flex-wrap:wrap;}
+.mdb-nav-list a{
+  font-size:14.5px;font-weight:600;color:var(--mdb-slate);padding:4px 0;
+  border-bottom:2px solid transparent;transition:color .2s,border-color .2s;
+}
+.mdb-nav-list a:hover{color:var(--mdb-navy);border-bottom-color:var(--mdb-amber);}
+
+.mdb-search{position:relative;flex:none;display:flex;align-items:center;gap:8px;}
+.mdb-search input{
+  width:190px;padding:8px 12px;font-size:13.5px;color:var(--mdb-ink);
+  background:#fff;border:1px solid var(--mdb-line);border-radius:10px;outline:none;
+  transition:border-color .2s,box-shadow .2s;
+}
+.mdb-search input:focus{border-color:var(--mdb-steel);box-shadow:0 0 0 3px rgba(93,127,153,.16);}
+.mdb-search-btn{
+  background:var(--mdb-navy);color:#fff;font-size:13px;font-weight:600;
+  padding:8px 14px;border-radius:10px;transition:background .2s;
+}
+.mdb-search-btn:hover{background:var(--mdb-steel);}
+.mdb-search-hint{
+  position:absolute;top:calc(100% + 8px);left:0;right:0;z-index:90;
+  background:#fff;border:1px solid var(--mdb-line);border-radius:10px;
+  box-shadow:var(--mdb-shadow);padding:8px;font-size:12.5px;color:var(--mdb-slate);display:none;
+}
+.mdb-search-hint.mdb-show{display:block;}
+.mdb-search-hint strong{color:var(--mdb-amber-deep);}
+
+.mdb-menu-btn{
+  display:none;width:40px;height:40px;border-radius:10px;border:1px solid var(--mdb-line);
+  place-items:center;background:#fff;flex:none;
+}
+.mdb-menu-btn span{display:block;width:18px;height:2px;background:var(--mdb-slate);position:relative;}
+.mdb-menu-btn span::before,.mdb-menu-btn span::after{
+  content:"";position:absolute;left:0;width:18px;height:2px;background:var(--mdb-slate);transition:transform .2s;
+}
+.mdb-menu-btn span::before{top:-6px;}
+.mdb-menu-btn span::after{top:6px;}
+
+/* ===== 通用容器 ===== */
+.mdb-wrap{max-width:1240px;margin:0 auto;padding:0 20px;}
+.mdb-section{padding:60px 0;}
+.mdb-section-head{
+  display:flex;align-items:flex-end;justify-content:space-between;gap:18px;flex-wrap:wrap;
+  margin-bottom:32px;
+}
+.mdb-kicker{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12px;font-weight:700;letter-spacing:2.6px;color:var(--mdb-amber-deep);
+  text-transform:uppercase;margin-bottom:10px;
+}
+.mdb-kicker::before{content:"";width:24px;height:2px;background:var(--mdb-amber);}
+.mdb-h2{font-size:clamp(23px,3vw,31px);color:var(--mdb-navy);letter-spacing:.3px;}
+.mdb-h2 em{font-style:normal;color:var(--mdb-amber-deep);}
+.mdb-lead{max-width:640px;color:var(--mdb-steel);font-size:14.5px;margin-top:12px;}
+.mdb-h3{font-size:18px;color:var(--mdb-navy);margin-bottom:8px;}
+.mdb-h4{font-size:15.5px;color:var(--mdb-navy);margin-bottom:6px;}
+
+.mdb-btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:7px;
+  padding:11px 22px;border-radius:11px;font-size:14px;font-weight:700;
+  transition:transform .18s,background .2s,box-shadow .2s,color .2s;
+}
+.mdb-btn:hover{transform:translateY(-1px);}
+.mdb-btn-solid{background:var(--mdb-navy);color:#fff;box-shadow:0 6px 16px rgba(23,50,74,.18);}
+.mdb-btn-solid:hover{background:var(--mdb-slate);}
+.mdb-btn-amber{background:var(--mdb-amber);color:var(--mdb-navy);}
+.mdb-btn-amber:hover{background:#f0bd5f;}
+.mdb-btn-ghost{border:1.5px solid var(--mdb-slate);color:var(--mdb-navy);background:transparent;}
+.mdb-btn-ghost:hover{background:rgba(43,74,102,.07);}
+.mdb-btn-sm{padding:7px 14px;font-size:12.5px;border-radius:9px;}
+
+/* ===== 首屏 ===== */
+.mdb-hero{padding:44px 0 60px;background:linear-gradient(180deg,#eef3f7 0%,var(--mdb-paper) 78%);}
+.mdb-hero-grid{
+  display:grid;grid-template-columns:minmax(0,5fr) minmax(0,5fr);gap:44px;align-items:center;
+}
+.mdb-hero-eyebrow{
+  display:inline-flex;align-items:center;gap:9px;background:#fff;border:1px solid var(--mdb-line);
+  color:var(--mdb-slate);font-size:12.5px;font-weight:700;letter-spacing:1px;
+  padding:6px 14px;border-radius:30px;margin-bottom:20px;
+}
+.mdb-hero-eyebrow i{width:7px;height:7px;border-radius:50%;background:var(--mdb-amber);display:block;}
+.mdb-h1{
+  font-size:clamp(34px,5.2vw,56px);line-height:1.1;color:var(--mdb-navy);letter-spacing:-.5px;
+  margin-bottom:18px;
+}
+.mdb-h1 span{color:var(--mdb-amber-deep);}
+.mdb-hero-desc{font-size:15.5px;color:var(--mdb-slate);max-width:520px;}
+.mdb-hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin:26px 0 30px;}
+
+.mdb-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;max-width:520px;}
+.mdb-stat{
+  background:#fff;border:1px solid var(--mdb-line);border-radius:12px;padding:14px 16px;
+  box-shadow:0 2px 8px rgba(23,50,74,.04);
+}
+.mdb-stat b{display:block;font-size:23px;color:var(--mdb-navy);line-height:1.2;letter-spacing:-.5px;}
+.mdb-stat span{font-size:12px;color:var(--mdb-steel);font-weight:600;letter-spacing:.4px;}
+
+.mdb-hero-visual{position:relative;}
+.mdb-hero-figure{
+  margin:0;border-radius:20px;overflow:hidden;border:1px solid #cdd9e2;
+  box-shadow:0 24px 50px rgba(23,50,74,.20);background:#dbe5ec;
+}
+.mdb-hero-figure img{width:100%;aspect-ratio:16/11;object-fit:cover;}
+.mdb-hero-badge{
+  position:absolute;left:-14px;bottom:-14px;background:#fff;border:1px solid var(--mdb-line);
+  border-radius:14px;padding:12px 18px;box-shadow:var(--mdb-shadow);display:flex;align-items:center;gap:12px;
+}
+.mdb-hero-badge .dot{width:34px;height:34px;border-radius:50%;background:rgba(232,176,75,.2);display:grid;place-items:center;flex:none;}
+.mdb-hero-badge .dot svg{width:15px;height:15px;}
+.mdb-hero-badge b{display:block;font-size:14px;color:var(--mdb-navy);}
+.mdb-hero-badge span{font-size:11.5px;color:var(--mdb-steel);}
+
+/* ===== 正文通用卡片 ===== */
+.mdb-card{
+  background:#fff;border:1px solid var(--mdb-line);border-radius:var(--mdb-radius);
+  box-shadow:0 2px 10px rgba(23,50,74,.045);
+  transition:transform .22s,box-shadow .22s,border-color .22s;
+}
+.mdb-card:hover{transform:translateY(-3px);box-shadow:var(--mdb-shadow);border-color:#bfcdd8;}
+
+.mdb-tag-row{display:flex;gap:7px;flex-wrap:wrap;}
+.mdb-tag{
+  display:inline-block;font-size:11.5px;font-weight:600;letter-spacing:.3px;
+  background:#eef3f7;color:var(--mdb-slate);border-radius:6px;padding:2px 9px;
+}
+.mdb-tag.amber{background:rgba(232,176,75,.18);color:#9a6a12;}
+
+.mdb-meta{
+  display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--mdb-steel);font-weight:500;
+  align-items:center;
+}
+.mdb-meta b{color:var(--mdb-slate);font-weight:700;}
+
+.mdb-ops{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;}
+.mdb-act{
+  display:inline-flex;align-items:center;gap:5px;font-size:12.5px;font-weight:600;
+  border:1px solid var(--mdb-line);background:#fff;color:var(--mdb-slate);
+  padding:5px 11px;border-radius:8px;transition:all .18s;
+}
+.mdb-act:hover{border-color:var(--mdb-steel);color:var(--mdb-navy);}
+.mdb-act.mdb-on{background:rgba(232,176,75,.18);border-color:var(--mdb-amber);color:#9a6a12;}
+.mdb-act svg{width:13px;height:13px;}
+
+/* ===== 焦点内容 S3 ===== */
+.mdb-focus-grid{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:26px;align-items:start;}
+.mdb-focus-main{
+  padding:0;overflow:hidden;display:flex;flex-direction:column;
+}
+.mdb-focus-main img{width:100%;aspect-ratio:16/9;object-fit:cover;}
+.mdb-focus-main .body{padding:24px 26px 26px;}
+.mdb-focus-main h3{font-size:22px;color:var(--mdb-navy);margin:10px 0 10px;}
+.mdb-focus-main p{font-size:14.5px;color:var(--mdb-slate);}
+
+.mdb-focus-list{display:flex;flex-direction:column;gap:14px;}
+.mdb-focus-item{
+  display:flex;gap:14px;padding:16px;align-items:flex-start;
+}
+.mdb-focus-item .idx{
+  flex:none;width:34px;height:34px;border-radius:9px;background:var(--mdb-navy);color:var(--mdb-amber);
+  display:grid;place-items:center;font-weight:800;font-size:14px;
+}
+.mdb-focus-item h4{font-size:15px;color:var(--mdb-navy);margin-bottom:4px;}
+.mdb-focus-item p{font-size:13px;color:var(--mdb-steel);margin:0;}
+
+/* ===== 视频流 ===== */
+.mdb-video-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;}
+.mdb-video-card{padding:20px;display:flex;flex-direction:column;}
+.mdb-video-card .vhead{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;}
+.mdb-video-card h3{font-size:16.5px;color:var(--mdb-navy);margin-bottom:6px;line-height:1.45;}
+.mdb-video-card .vsum{font-size:13.5px;color:var(--mdb-slate);margin:8px 0 12px;}
+.mdb-video-card .vcover{margin:12px 0 0;border-radius:10px;overflow:hidden;border:1px solid var(--mdb-line);}
+.mdb-video-card .vcover img{width:100%;aspect-ratio:16/9;object-fit:cover;}
+.mdb-vplay{
+  flex:none;width:38px;height:38px;border-radius:10px;background:rgba(232,176,75,.16);
+  display:grid;place-items:center;
+}
+.mdb-vplay svg{width:15px;height:15px;}
+
+/* ===== 专题 ===== */
+.mdb-topics{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;}
+.mdb-topic{padding:22px;display:flex;flex-direction:column;}
+.mdb-topic .status{
+  align-self:flex-start;font-size:11px;font-weight:700;letter-spacing:.6px;padding:3px 10px;border-radius:20px;
+  background:rgba(43,74,102,.1);color:var(--mdb-slate);margin-bottom:12px;
+}
+.mdb-topic .status.live{background:rgba(232,176,75,.2);color:#9a6a12;}
+.mdb-topic h3{font-size:17.5px;color:var(--mdb-navy);margin-bottom:8px;}
+.mdb-topic p{font-size:13.5px;color:var(--mdb-steel);margin-bottom:14px;}
+.mdb-topic ul{display:flex;flex-direction:column;gap:8px;margin-top:auto;}
+.mdb-topic li{
+  font-size:13px;color:var(--mdb-slate);padding-left:16px;position:relative;
+}
+.mdb-topic li::before{
+  content:"";position:absolute;left:0;top:.7em;width:6px;height:6px;border-radius:50%;
+  background:var(--mdb-amber);
+}
+
+/* ===== 作者区 ===== */
+.mdb-authors{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;}
+.mdb-author{padding:20px;display:flex;flex-direction:column;align-items:flex-start;}
+.mdb-avatar{
+  width:52px;height:52px;border-radius:14px;display:grid;place-items:center;
+  font-weight:800;font-size:19px;color:#fff;flex:none;margin-bottom:12px;
+}
+.mdb-author h3{font-size:16px;color:var(--mdb-navy);margin-bottom:2px;}
+.mdb-author .field{font-size:12px;color:var(--mdb-amber-deep);font-weight:700;letter-spacing:.4px;margin-bottom:10px;}
+.mdb-author p{font-size:13px;color:var(--mdb-slate);margin-bottom:12px;}
+.mdb-author .astats{display:flex;gap:16px;font-size:12px;color:var(--mdb-steel);font-weight:600;margin-top:auto;}
+.mdb-author .astats b{color:var(--mdb-navy);}
+
+/* ===== 关键词解析 ===== */
+.mdb-analysis{
+  background:#fff;border:1px solid var(--mdb-line);border-radius:18px;padding:38px 40px;
+  box-shadow:0 3px 14px rgba(23,50,74,.05);
+}
+.mdb-analysis .mdb-h3{font-size:19px;margin-top:26px;}
+.mdb-analysis .mdb-h3:first-of-type{margin-top:0;}
+.mdb-analysis p{font-size:14.5px;color:#33475a;}
+.mdb-analysis .mdb-lead{margin-bottom:26px;}
+
+/* ===== 评论区 ===== */
+.mdb-comments{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;}
+.mdb-comment{padding:18px 20px;display:flex;flex-direction:column;gap:10px;}
+.mdb-comment-top{display:flex;align-items:center;gap:10px;}
+.mdb-comment-av{
+  width:34px;height:34px;border-radius:50%;flex:none;display:grid;place-items:center;
+  font-size:13px;font-weight:800;color:#fff;
+}
+.mdb-comment-top b{font-size:13.5px;color:var(--mdb-navy);}
+.mdb-comment-top span{font-size:11.5px;color:var(--mdb-steel);}
+.mdb-comment p{font-size:13.5px;color:var(--mdb-slate);margin:0;}
+.mdb-score{
+  display:flex;align-items:center;gap:6px;font-size:12.5px;font-weight:700;color:var(--mdb-amber-deep);
+}
+.mdb-score .stars{letter-spacing:2px;color:var(--mdb-amber);font-size:13px;}
+
+/* ===== 企业动态 ===== */
+.mdb-news{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;}
+.mdb-news-item{padding:18px 20px;border-left:3px solid var(--mdb-amber);}
+.mdb-news-item time{font-size:11.5px;color:var(--mdb-steel);font-weight:600;letter-spacing:.5px;}
+.mdb-news-item h4{font-size:15px;color:var(--mdb-navy);margin:6px 0 6px;}
+.mdb-news-item p{font-size:13px;color:var(--mdb-slate);margin:0;}
+
+/* ===== FAQ ===== */
+.mdb-faq{display:flex;flex-direction:column;gap:10px;max-width:900px;}
+.mdb-faq details{
+  background:#fff;border:1px solid var(--mdb-line);border-radius:12px;padding:0 20px;
+  transition:border-color .2s;
+}
+.mdb-faq details[open]{border-color:var(--mdb-steel);}
+.mdb-faq summary{
+  list-style:none;cursor:pointer;padding:16px 0;font-size:15px;font-weight:700;color:var(--mdb-navy);
+  display:flex;justify-content:space-between;gap:12px;align-items:center;
+}
+.mdb-faq summary::-webkit-details-marker{display:none;}
+.mdb-faq summary::after{content:"+";font-size:19px;color:var(--mdb-amber-deep);font-weight:700;flex:none;}
+.mdb-faq details[open] summary::after{content:"–";}
+.mdb-faq .ans{padding:0 0 18px;font-size:13.8px;color:var(--mdb-slate);}
+
+/* ===== 合作墙 ===== */
+.mdb-partners{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;}
+.mdb-partner{
+  background:#fff;border:1px solid var(--mdb-line);border-radius:12px;padding:18px 14px;
+  text-align:center;font-size:13.5px;font-weight:700;color:var(--mdb-slate);letter-spacing:.4px;
+  transition:border-color .2s,color .2s;
+}
+.mdb-partner:hover{border-color:var(--mdb-amber);color:var(--mdb-navy);}
+
+/* ===== 页脚 ===== */
+.mdb-footer{background:var(--mdb-navy);color:#b8cad6;padding:52px 0 26px;margin-top:20px;}
+.mdb-footer-grid{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr));gap:32px;}
+.mdb-footer h4{color:#fff;font-size:14px;letter-spacing:.6px;margin-bottom:14px;}
+.mdb-footer p{font-size:13px;line-height:1.8;}
+.mdb-footer ul{display:flex;flex-direction:column;gap:8px;}
+.mdb-footer ul a{font-size:13px;color:#a9bfcd;transition:color .2s;}
+.mdb-footer ul a:hover{color:var(--mdb-amber);}
+.mdb-footer .f-brand{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+.mdb-footer .f-brand .mdb-brand-name{color:#fff;}
+.mdb-footer .f-brand .mdb-brand-sub{color:#8fa7b6;}
+.mdb-footer-bottom{
+  border-top:1px solid rgba(255,255,255,.12);margin-top:36px;padding-top:20px;
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12px;color:#8fa7b6;
+}
+
+/* ===== 浮动按钮 & Toast ===== */
+.mdb-to-top{
+  position:fixed;right:22px;bottom:26px;width:44px;height:44px;border-radius:12px;
+  background:var(--mdb-navy);color:#fff;display:grid;place-items:center;z-index:70;
+  box-shadow:0 8px 20px rgba(23,50,74,.28);opacity:0;pointer-events:none;transform:translateY(10px);
+  transition:opacity .25s,transform .25s;
+}
+.mdb-to-top.mdb-show{opacity:1;pointer-events:auto;transform:translateY(0);}
+.mdb-toast{
+  position:fixed;left:50%;bottom:32px;transform:translate(-50%,20px);z-index:120;
+  background:var(--mdb-navy);color:#fff;font-size:13.5px;font-weight:600;
+  padding:11px 22px;border-radius:11px;box-shadow:0 10px 26px rgba(23,50,74,.3);
+  opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;
+}
+.mdb-toast.mdb-show{opacity:1;transform:translate(-50%,0);}
+
+/* ===== 响应式 ===== */
+@media(max-width:980px){
+  .mdb-hero-grid{grid-template-columns:1fr;gap:32px;}
+  .mdb-focus-grid{grid-template-columns:1fr;}
+  .mdb-footer-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:760px){
+  :root{--mdb-head-h:auto;}
+  .mdb-menu-btn{display:grid;}
+  .mdb-nav{
+    display:none;flex-basis:100%;order:5;
+    border-top:1px solid var(--mdb-line);margin-top:12px;padding-top:14px;
+  }
+  .mdb-nav.mdb-open{display:block;}
+  .mdb-nav-list{flex-direction:column;gap:2px;}
+  .mdb-nav-list a{display:block;padding:10px 4px;border-bottom:1px solid #e6edf2;}
+  .mdb-search{order:4;margin-left:auto;}
+  .mdb-search input{width:150px;}
+  .mdb-video-list,.mdb-comments{grid-template-columns:1fr;}
+  .mdb-analysis{padding:26px 22px;}
+  .mdb-stats{grid-template-columns:1fr 1fr;}
+  .mdb-footer-grid{grid-template-columns:1fr;}
+  .mdb-section{padding:44px 0;}
+  .mdb-hero-badge{left:10px;bottom:10px;}
+}
+@media(max-width:460px){
+  .mdb-stats{grid-template-columns:1fr;}
+  .mdb-search input{width:112px;}
+  .mdb-hero-actions .mdb-btn{width:100%;}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+<a class="mdb-skip" href="#mdb-main">跳到主要内容</a>
+
+<div class="mdb-sticky">
+  <div class="mdb-announce" role="region" aria-label="站点公告">
+    <div class="mdb-announce-in">
+      <span class="mdb-announce-tag">官方发布</span>
+      <span class="mdb-announce-text">「不打烊夜话」第 12 期上线，新增 3 位城市纪录创作者入驻，本期专题《凌晨四点的厨房》同步开放投票。</span>
+      <a class="mdb-announce-link" href="#mdb-topics">查看专题</a>
+    </div>
+  </div>
+  <header class="mdb-header">
+    <div class="mdb-header-in">
+      <a class="mdb-brand" href="#mdb-hero" aria-label="麻豆不打烊 首页">
+        <span class="mdb-brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M8 6l11 6-11 6V6z" fill="#e8b04b"/></svg>
+        </span>
+        <span>
+          <span class="mdb-brand-name">麻豆不打烊</span>
+          <span class="mdb-brand-sub">MADOU NEVER OFF</span>
+        </span>
+      </a>
+      <nav class="mdb-nav" id="mdb-nav" aria-label="主导航">
+        <ul class="mdb-nav-list">
+          <li><a href="#mdb-focus">焦点内容</a></li>
+          <li><a href="#mdb-videos">热门视频</a></li>
+          <li><a href="#mdb-topics">专题企划</a></li>
+          <li><a href="#mdb-authors">创作者</a></li>
+          <li><a href="#mdb-analysis">品牌解析</a></li>
+          <li><a href="#mdb-comments">社区口碑</a></li>
+          <li><a href="#mdb-faq">帮助中心</a></li>
+        </ul>
+      </nav>
+      <div class="mdb-search">
+        <input type="search" id="mdb-search-input" placeholder="搜索视频、作者或专题" aria-label="站内搜索">
+        <button class="mdb-search-btn" id="mdb-search-btn" type="button">搜索</button>
+        <div class="mdb-search-hint" id="mdb-search-hint" role="status" aria-live="polite"></div>
+      </div>
+      <button class="mdb-menu-btn" id="mdb-menu-btn" type="button" aria-label="展开导航菜单" aria-expanded="false" aria-controls="mdb-nav">
+        <span></span>
+      </button>
+    </div>
+  </header>
+</div>
+
+<main id="mdb-main">
+
+  <!-- S2 首屏 -->
+  <section class="mdb-hero" id="mdb-hero" aria-labelledby="mdb-h1">
+    <div class="mdb-wrap mdb-hero-grid">
+      <div>
+        <span class="mdb-hero-eyebrow"><i></i>官方网站 · 品牌视频社区</span>
+        <h1 class="mdb-h1" id="mdb-h1">麻豆不打烊<span>，</span>把生活拍成连续剧</h1>
+        <p class="mdb-hero-desc">作为国内持续运营的真实生活影像品牌，麻豆不打烊官方网站为创作者与企业搭建高品质内容生态：不关灯、不断更、不敷衍。我们相信每一次记录都是原创正版的高清表达，每一帧日常都值得被社区认真对待。</p>
+        <div class="mdb-hero-actions">
+          <a class="mdb-btn mdb-btn-solid" href="#mdb-videos">进入视频流</a>
+          <a class="mdb-btn mdb-btn-amber" href="#mdb-authors">认识创作者</a>
+          <button class="mdb-btn mdb-btn-ghost" type="button" data-mdb-open-submit>投稿入口</button>
+        </div>
+        <div class="mdb-stats">
+          <div class="mdb-stat"><b data-mdb-count="42">0</b><span>万+ 原创视频</span></div>
+          <div class="mdb-stat"><b data-mdb-count="3600">0</b><span>位认证创作者</span></div>
+          <div class="mdb-stat"><b data-mdb-count="98">0</b><span>% 社区好评率</span></div>
+        </div>
+      </div>
+      <div class="mdb-hero-visual">
+        <figure class="mdb-hero-figure">
+          <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 560'%3E%3Cdefs%3E%3ClinearGradient id='sky' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%232b4a66'/%3E%3Cstop offset='1' stop-color='%235d7f99'/%3E%3C/linearGradient%3E%3ClinearGradient id='floor' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23e8b04b'/%3E%3Cstop offset='1' stop-color='%23c98f2b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='560' fill='url(%23sky)'/%3E%3Ccircle cx='640' cy='130' r='64' fill='%23f6f8fa' opacity='.9'/%3E%3Crect x='0' y='390' width='800' height='170' fill='url(%23floor)'/%3E%3Crect x='70' y='230' width='120' height='180' rx='8' fill='%2317324a'/%3E%3Crect x='210' y='290' width='90' height='120' rx='8' fill='%23e9eef2' opacity='.85'/%3E%3Crect x='320' y='180' width='140' height='230' rx='8' fill='%2317324a'/%3E%3Crect x='490' y='250' width='110' height='160' rx='8' fill='%23e9eef2' opacity='.7'/%3E%3Crect x='130' y='200' width='46' height='30' rx='5' fill='%23e8b04b'/%3E%3Crect x='360' y='150' width='60' height='30' rx='5' fill='%23e8b04b'/%3E%3Ccircle cx='255' cy='440' r='30' fill='%2317324a' opacity='.55'/%3E%3Ccircle cx='560' cy='460' r='22' fill='%2317324a' opacity='.45'/%3E%3Cpath d='M0 390 L800 330' stroke='%23ffffff' stroke-opacity='.18' stroke-width='2'/%3E%3C/svg%3E" alt="麻豆不打烊首屏主视觉：夜幕下的城市街区与亮灯的内容工作室">
+        </figure>
+        <div class="mdb-hero-badge">
+          <span class="dot">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M8 6l11 6-11 6V6z" fill="#c98f2b"/></svg>
+          </span>
+          <span><b>不打烊直播间</b><span>每晚 22:00 城市夜话连载中</span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S3 焦点内容 -->
+  <section class="mdb-section" id="mdb-focus" aria-labelledby="mdb-focus-h2">
+    <div class="mdb-wrap">
+      <div class="mdb-section-head">
+        <div>
+          <span class="mdb-kicker">Focus · 本期焦点</span>
+          <h2 class="mdb-h2" id="mdb-focus-h2">麻豆不打烊今日重点 <em>值得先看</em></h2>
+          <p class="mdb-lead">编辑部每天从海量投稿中挑出一组重点内容，配以完整资料与创作手记，方便你快速进入这个品牌社区的节奏。</p>
+        </div>
+        <a class="mdb-btn mdb-btn-ghost mdb-btn-sm" href="#mdb-videos">全部视频</a>
+      </div>
+
+      <div class="mdb-focus-grid">
+        <article class="mdb-card mdb-focus-main">
+          <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Cdefs%3E%3ClinearGradient id='g1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2317324a'/%3E%3Cstop offset='1' stop-color='%235d7f99'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='640' height='360' fill='%23e9eef2'/%3E%3Crect x='0' y='0' width='640' height='230' fill='url(%23g1)'/%3E%3Ccircle cx='500' cy='80' r='46' fill='%23e8b04b' opacity='.9'/%3E%3Crect x='40' y='140' width='180' height='140' rx='10' fill='%23ffffff' opacity='.92'/%3E%3Crect x='240' y='180' width='120' height='100' rx='10' fill='%23c98f2b' opacity='.85'/%3E%3Crect x='390' y='120' width='90' height='160' rx='10' fill='%2317324a' opacity='.8'/%3E%3Crect x='60' y='160' width='60' height='8' rx='4' fill='%232b4a66'/%3E%3Crect x='60' y='180' width='120' height='8' rx='4' fill='%23c9d6df'/%3E%3Crect x='60' y='200' width='90' height='8' rx='4' fill='%23c9d6df'/%3E%3Cpath d='M0 300 Q320 250 640 300 L640 360 L0 360Z' fill='%23d3dde5'/%3E%3C/svg%3E" alt="焦点内容《凌晨四点的厨房》封面：夜色中的厨房台面与晨光">
+          <div class="body">
+            <div class="mdb-tag-row">
+              <span class="mdb-tag amber">品牌专题</span>
+              <span class="mdb-tag">城市探索</span>
+              <span class="mdb-tag">在地文化</span>
+            </div>
+            <h3>凌晨四点的厨房：一座城市的早餐接力</h3>
+            <p>麻豆不打烊原创团队连续 21 天蹲守三家早餐铺，用高清长镜头记录面点师、送奶工与第一位食客的相遇。这是本季度「不打烊夜话」的代表作，也是品牌持续运营的真实注脚。</p>
+            <div class="mdb-meta">
+              <span>作者：<b>阿岚的镜头</b></span>
+              <span>播放 <b>28.6万</b></span>
+              <span>点赞 <b>1.9万</b></span>
+              <span>收藏 <b>8,420</b></span>
+            </div>
+            <div class="mdb-ops">
+              <button class="mdb-act" type="button" data-mdb-like><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 10v11M2 13v6a2 2 0 002 2h14a2 2 0 002-2v-6a2 2 0 00-2-2h-4V5a2 2 0 00-2-2H8l-1 7H2z"/></svg> 点赞</button>
+              <button class="mdb-act" type="button" data-mdb-fav><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 00-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 000-7.8z"/></svg> 收藏</button>
+              <button class="mdb-act" type="button" data-mdb-copy>复制链接</button>
+            </div>
+          </div>
+        </article>
+
+        <div class="mdb-focus-list">
+          <article class="mdb-card mdb-focus-item">
+            <span class="idx">01</span>
+            <div>
+              <h4>一部手机拍出电影感：夜景运镜 8 个动作</h4>
+              <p>摄影指导拆解手持稳定与光比控制，适合新手直接照做的实操清单。</p>
+            </div>
+          </article>
+          <article class="mdb-card mdb-focus-item">
+            <span class="idx">02</span>
+            <div>
+              <h4>从 0 到 3 万粉：生活类账号的选题日历</h4>
+              <p>创作者「小满不晚」公开自己连续 90 天的选题与复盘表格。</p>
+            </div>
+          </article>
+          <article class="mdb-card mdb-focus-item">
+            <span class="idx">03</span>
+            <div>
+              <h4>社区圆桌：为什么真实比精致更打动人</h4>
+              <p>五位长期创作者围绕「原生态记录」展开的一次深聊实录。</p>
+            </div>
+          </article>
+          <article class="mdb-card mdb-focus-item">
+            <span class="idx">04</span>
+            <div>
+              <h4>本期挑战赛：记录你家楼下的一平米</h4>
+              <p>报名已开启，上传 60 秒短片即可参与社区投票与月度展映。</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- M3 热门视频流 -->
+  <section class="mdb-section" id="mdb-videos" aria-labelledby="mdb-videos-h2">
+    <div class="mdb-wrap">
+      <div class="mdb-section-head">
+        <div>
+          <span class="mdb-kicker">Hot · 热门视频</span>
+          <h2 class="mdb-h2" id="mdb-videos-h2">不看会错过的 <em>麻豆不打烊视频</em></h2>
+          <p class="mdb-lead">以下内容按社区近 7 天播放与互动综合排序，重点条目配高清封面，其余以文字摘要呈现完整信息。</p>
+        </div>
+      </div>
+
+      <div class="mdb-video-list">
+        <article class="mdb-card mdb-video-card">
+          <div class="vhead">
+            <h3>把出租屋改成「深夜食堂」的 46 天</h3>
+            <span class="mdb-vplay"><svg viewBox="0 0 24 24" fill="none"><path d="M8 6l11 6-11 6V6z" fill="#c98f2b"/></svg></span>
+          </div>
+          <div class="mdb-tag-row"><span class="mdb-tag amber">生活方式</span><span class="mdb-tag">家居收纳</span></div>
+          <p class="vsum">从量房到第一锅汤，完整记录一间 28㎡出租屋的厨房重生。含预算表、动线与租房可逆改造技巧。</p>
+          <div class="vcover">
+            <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Crect width='480' height='270' fill='%23e8b04b' opacity='.22'/%3E%3Crect x='30' y='120' width='150' height='110' rx='8' fill='%232b4a66'/%3E%3Crect x='210' y='80' width='100' height='150' rx='8' fill='%23ffffff'/%3E%3Crect x='340' y='140' width='110' height='90' rx='8' fill='%23c98f2b'/%3E%3Ccircle cx='100' cy='70' r='30' fill='%23e8b04b'/%3E%3Crect x='55' y='150' width='60' height='10' rx='4' fill='%23e8b04b'/%3E%3Crect x='55' y='172' width='90' height='10' rx='4' fill='%235d7f99'/%3E%3Crect x='240' y='105' width='60' height='10' rx='4' fill='%232b4a66'/%3E%3Crect x='240' y='128' width='45' height='10' rx='4' fill='%23c9d6df'/%3E%3C/svg%3E" alt="视频《把出租屋改成深夜食堂的46天》封面：改造后的厨房与暖色灯光">
+          </div>
+          <div class="mdb-meta">
+            <span>作者：<b>小满不晚</b></span>
+            <span>播放 <b>16.2万</b></span>
+            <span>点赞 <b>9,860</b></span>
+            <span>收藏 <b>4,510</b></span>
+          </div>
+          <div class="mdb-ops">
+            <button class="mdb-act" type="button" data-mdb-like>点赞</button>
+            <button class="mdb-act" type="button" data-mdb-fav>收藏</button>
+            <button class="mdb-act" type="button" data-mdb-copy>复制链接</button>
+          </div>
+        </article>
+
+        <article class="mdb-card mdb-video-card">
+          <div class="vhead">
+            <h3>跟着环卫师傅走一夜：城市醒来的 300 分钟</h3>
+            <span class="mdb-vplay"><svg viewBox="0 0 24 24" fill="none"><path d="M8 6l11 6-11 6V6z" fill="#c98f2b"/></svg></span>
+          </div>
+          <div class="mdb-tag-row"><span class="mdb-tag">城市探索</span><span class="mdb-tag">深度记录</span></div>
+          <p class="vsum">跟拍路线全长 11 公里，含路线图、作业时间表与三位一线工人的口述片段。适合想了解城市运转细节的观众。</p>
+          <div class="mdb-meta">
+            <span>作者：<b>老周在路上</b></span>
+            <span>播放 <b>12.4万</b></span>
+            <span>点赞 <b>7,320</b></span>
+            <span>收藏 <b>3,208</b></span>
+          </div>
+          <div class="mdb-ops">
+            <button class="mdb-act" type="button" data-mdb-like>点赞</button>
+            <button class="mdb-act" type="button" data-mdb-fav>收藏</button>
+            <button class="mdb-act" type="button" data-mdb-copy>复制链接</button>
+          </div>
+        </article>
+
+        <article class="mdb-card mdb-video-card">
+          <div class="vhead">
+            <h3>哑光陶土手作：一块泥的 12 次失败</h3>
+            <span class="mdb-vplay"><svg viewBox="0 0 24 24" fill="none"><path d="M8 6l11 6-11 6V6z" fill="#c98f2b"/></svg></span>
+          </div>
+          <div class="mdb-tag-row"><span class="mdb-tag">手作DIY</span><span class="mdb-tag">艺术美学</span></div>
+          <p class="vsum">从揉泥到上釉全部实拍，失败品也保留在画面中。附工具清单与常见开裂原因排查表。</p>
+          <div class="vcover">
+            <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Crect width='480' height='270' fill='%23d8cdbd'/%3E%3Ccircle cx='150' cy='140' r='78' fill='%23a9805a'/%3E%3Ccircle cx='150' cy='140' r='52' fill='%23c79b70'/%3E%3Ccircle cx='150' cy='140' r='28' fill='%238a6244'/%3E%3Crect x='300' y='60' width='110' height='150' rx='12' fill='%23e9eef2'/%3E%3Crect x='318' y='86' width='74' height='9' rx='4' fill='%235d7f99'/%3E%3Crect x='318' y='108' width='52' height='9' rx='4' fill='%235d7f99'/%3E%3Cpath d='M0 230 Q240 195 480 230 L480 270 L0 270Z' fill='%23b79c81' opacity='.6'/%3E%3C/svg%3E" alt="视频《哑光陶土手作》封面：转盘上的陶土与工作台工具">
+          </div>
+          <div class="mdb-meta">
+            <span>作者：<b>陶土阿檀</b></span>
+            <span>播放 <b>9.8万</b></span>
+            <span>点赞 <b>6,104</b></span>
+            <span>收藏 <b>5,033</b></span>
+          </div>
+          <div class="mdb-ops">
+            <button class="mdb-act" type="button" data-mdb-like>点赞</button>
+            <button class="mdb-act" type="button" data-mdb-fav>收藏</button>
+            <button class="mdb-act" type="button" data-mdb-copy>复制链接</button>
+          </div>
+        </article>
+
+        <article class="mdb-card mdb-video-card">
+          <div class="vhead">
+            <h3>一张图讲清：短片节奏到底怎么剪</h3>
+            <span class="mdb-vplay"><svg viewBox="0 0 24 24" fill="none"><path d="M8 6l11 6-11 6V6z" fill="#c98f2b"/></svg></span>
+          </div>
+          <div class="mdb-tag-row"><span class="mdb-tag">教程干货</span><span class="mdb-tag">创作幕后</span></div>
+          <p class="vsum">用三条不同风格的片段对照剪法，讲清呼吸感、留白与卡点的取舍，附可下载练习素材说明。</p>
+          <div class="mdb-meta">
+            <span>作者：<b>剪辑师老K</b></span>
+            <span>播放 <b>8.6万</b></span>
+            <span>点赞 <b>5,782</b></span>
+            <span>收藏 <b>6,940</b></span>
+          </div>
+          <div class="mdb-ops">
+            <button class="mdb-act" type="button" data-mdb-like>点赞</button>
+            <button class="mdb-act" type="button" data-mdb-fav>收藏</button>
+            <button class="mdb-act" type="button" data-mdb-copy>复制链接</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- S4 专题 / M4 -->
+  <section class="mdb-section" id="mdb-topics" aria-labelledby="mdb-topics-h2">
+    <div class="mdb-wrap">
+      <div class="mdb-section-head">
+        <div>
+          <span class="mdb-kicker">Series · 专题企划</span>
+          <h2 class="mdb-h2" id="mdb-topics-h2">麻豆不打烊 <em>长期企划</em> 与社区共创</h2>
+          <p class="mdb-lead">专题是品牌原创能力的集中体现：固定主题、持续更新、开放共创。每一个企划都配套内容条目与参与方式。</p>
+        </div>
+      </div>
+      <div class="mdb-topics">
+        <article class="mdb-card mdb-topic">
+          <span class="status live">更新中 · 每周四</span>
+          <h3>不打烊夜话：城市深夜观察</h3>
+          <p>围绕夜间经济与夜班人群展开的连载纪录，已上线 12 期，累计播放 186 万，是社区讨论度最高的专题之一。</p>
+          <ul>
+            <li>第 12 期：凌晨面包房的第 900 次揉面</li>
+            <li>第 11 期：代驾司机的最后一个订单</li>
+            <li>第 10 期：24 小时便利店的常客名单</li>
+          </ul>
+        </article>
+
+        <article class="mdb-card mdb-topic">
+          <span class="status live">报名进行中</span>
+          <h3>一平米计划：社区影像共创</h3>
+          <p>邀请创作者记录自己生活里最熟悉的一平米，用 60 秒讲清它的故事。每月投票选出 5 件作品进入官方展映。</p>
+          <ul>
+            <li>报名入口：投稿页选择「一平米计划」</li>
+            <li>本期主题：我家楼下的那家小店</li>
+            <li>展映时间：每月最后一个周六</li>
+          </ul>
+        </article>
+
+        <article class="mdb-card mdb-topic">
+          <span class="status">已完结 · 可回看</span>
+          <h3>手作慢实验：材料的 30 种可能</h3>
+          <p>从木、陶、布到纸，记录手作人如何与材料对话。完整 30 集已上线，适合作为入门手作的系统观看路径。</p>
+          <ul>
+            <li>合集时长：6 小时 42 分钟</li>
+            <li>配套：工具表 + 失败复盘笔记</li>
+            <li>适合人群：手作新手与教学者</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- S5 作者矩阵 -->
+  <section class="mdb-section" id="mdb-authors" aria-labelledby="mdb-authors-h2">
+    <div class="mdb-wrap">
+      <div class="mdb-section-head">
+        <div>
+          <span class="mdb-kicker">Creators · 创作者名录</span>
+          <h2 class="mdb-h2" id="mdb-authors-h2">构成 <em>麻豆不打烊</em> 的人</h2>
+          <p class="mdb-lead">他们来自不同城市与职业，共同点是持续更新、认真对待每一次记录。以下为本期社区推荐创作者。</p>
+        </div>
+      </div>
+
+      <div class="mdb-authors">
+        <article class="mdb-card mdb-author">
+          <span class="mdb-avatar" style="background:linear-gradient(135deg,#2b4a66,#17324a)">阿</span>
+          <h3>阿岚的镜头</h3>
+          <span class="field">城市纪录 · 长镜头叙事</span>
+          <p>纪录片导演出身，擅长用稳定长镜头捕捉日常的呼吸感。坚持「不摆拍、不催泪」的记录原则，作品被多家媒体转载。</p>
+          <div class="astats"><span>作品 <b>86</b></span><span>粉丝 <b>12.4万</b></span></div>
+        </article>
+
+        <article class="mdb-card mdb-author">
+          <span class="mdb-avatar" style="background:linear-gradient(135deg,#c98f2b,#e8b04b)">小</span>
+          <h3>小满不晚</h3>
+          <span class="field">家居改造 · 生活方式</span>
+          <p>把出租屋改造成理想生活现场的设计师。镜头里常见量尺、旧物与植物，主张「可逆改造」与低预算美学。</p>
+          <div class="astats"><span>作品 <b>112</b></span><span>粉丝 <b>9.7万</b></span></div>
+        </article>
+
+        <article class="mdb-card mdb-author">
+          <span class="mdb-avatar" style="background:linear-gradient(135deg,#5d7f99,#2b4a66)">周</span>
+          <h3>老周在路上</h3>
+          <span class="field">城市探索 · 口述历史</span>
+          <p>前市政记者，现全职内容创作者。习惯带着录音笔出门，把镜头交给一线劳动者，擅长在细节里讲清一座城市的运行逻辑。</p>
+          <div class="astats"><span>作品 <b>64</b></span><span>粉丝 <b>8.2万</b></span></div>
+        </article>
+
+        <article class="mdb-card mdb-author">
+          <span class="mdb-avatar" style="background:linear-gradient(135deg,#8a6244,#c79b70)">檀</span>
+          <h3>陶土阿檀</h3>
+          <span class="field">手作DIY · 材料实验</span>
+          <p>陶艺工作室主理人，坚持保留失败过程。视频里能看到开裂、塌陷与重来，也正因如此被社区称为「最诚实的手作频道」。</p>
+          <div class="astats"><span>作品 <b>58</b></span><span>粉丝 <b>6.8万</b></span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- M15 关键词解析 / 深度解析 -->
+  <section class="mdb-section" id="mdb-analysis" aria-labelledby="mdb-analysis-h2">
+    <div class="mdb-wrap">
+      <div class="mdb-analysis">
+        <span class="mdb-kicker">Insight · 品牌解析</span>
+        <h2 class="mdb-h2" id="mdb-analysis-h2" style="margin-bottom:18px">读懂「麻豆不打烊」：一个视频品牌的 <em>长期主义</em></h2>
+        <p class="mdb-lead">超过 800 字的深度解析，从品牌命名、内容标准、社区机制到行业观察，完整说明麻豆不打烊为什么能成为一个被持续讨论的名字。</p>
+
+        <h3 class="mdb-h3">一、名字里的承诺：为什么是「不打烊」</h3>
+        <p>麻豆不打烊这个品牌名，最早来自创始团队的一句自嘲：做内容的人常常熬夜，但生活的素材从不按时下班。于是「不打烊」被确定为核心品牌理念——它既指内容更新不断档，也指社区对每一位普通人的日常保持开放。作为官方网站，我们把这个承诺拆解为三条可执行的规则：每天有新增可用内容、每周有固定的专题更新、每月有面向全社区开放的共创活动。对观众而言，这意味着任何时间打开平台，都能找到新的原创正版内容；对创作者而言，这意味着发布不是一次性的赌博，而是进入一条被认真维护的内容生态。</p>
+        <p>在视觉与文案上，「不打烊」也影响了品牌的表达方式。我们不追求过度精致的棚拍质感，更重视真实场景里的光线、声音与情绪。麻豆不打烊的高清标准，指的首先是「看得清细节」，其次是「经得起回看」。这种取向让品牌在生活记录类内容中形成了辨识度，也让不少新创作者在第一次投稿时就知道：这里欢迎真实，容忍不完美，但拒绝敷衍。</p>
+
+        <h3 class="mdb-h3">二、内容标准：从选题到上线的一条链路</h3>
+        <p>麻豆不打烊的内容链路分为四步：选题立项、拍摄记录、剪辑审校、社区反馈。选题会上，编辑与创作者会共同回答三个问题：这个题材是否与日常生活强相关？是否提供了可被验证的细节？是否能让观众带走一个具体方法或一段真实情绪？只有三个问题都得到肯定回答的选题，才会进入正式制作。拍摄阶段，品牌鼓励创作者保留环境音与自然光，必要时才补拍说明镜头，以维持记录的完整感。</p>
+        <p>剪辑审校是最能体现「品质」与「口碑」的环节。团队会检查三条硬指标：信息密度是否足够、字幕是否准确、是否存在误导性剪辑。对于教程类内容，还要求附上工具、预算或步骤清单；对于人物类内容，则必须获得被拍摄者的授权与确认。上线之后，社区反馈会被整理成周报，直接影响下一轮选题方向。这一套流程并不复杂，但贵在持续运营，也正是品牌被用户首选的原因之一。</p>
+
+        <h3 class="mdb-h3">三、社区机制：让创作与观看形成循环</h3>
+        <p>麻豆不打烊并不把创作者和观众视为两端，而是希望形成循环。具体机制包括：其一，新人扶持——新入驻创作者的前三条内容会获得官方推荐位与编辑点评；其二，共创专题——像「一平米计划」这样的企划，观众可以直接投稿，也可以参与投票，决定哪些作品进入展映；其三，口碑沉淀——每条内容下方保留真实评价，差评与建议不会被隐藏，而是作为内容优化的依据。这些机制让社区保持活力，也让品牌的影响力来自长期信任而非短期流量。</p>
+        <p>对于企业合作，麻豆不打烊坚持「内容先行」：合作品牌需要先理解社区的表达习惯，再讨论曝光方式。我们更愿意做深度联名与真实体验记录，而不是简单贴片。这种相对克制的商业化节奏，保护了创作者与观众之间的信任，也让平台在垂直领域建立了更稳定的口碑。未来，品牌会继续围绕城市、手作、家居与个人成长四个方向深耕，同时开放更多工具与培训资源，降低优质内容的创作门槛。</p>
+        <p>回看麻豆不打烊的成长，会发现它并没有依赖某一个爆款，而是靠大量中等体量、真实可信的内容逐步累积。这种路径不轻松，却符合我们对「值得信赖的视频品牌」的理解：不喧哗、不缺席，把每一次记录都当成长期资产来经营。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- S6 用户评价 -->
+  <section class="mdb-section" id="mdb-comments" aria-labelledby="mdb-comments-h2">
+    <div class="mdb-wrap">
+      <div class="mdb-section-head">
+        <div>
+          <span class="mdb-kicker">Voice · 社区口碑</span>
+          <h2 class="mdb-h2" id="mdb-comments-h2">来自 <em>麻豆不打烊</em> 社区的声音</h2>
+          <p class="mdb-lead">以下评价来自不同使用场景与观看习惯的用户，长度与关注点各不相同，保留原始语气。</p>
+        </div>
+      </div>
+
+      <div class="mdb-comments">
+        <article class="mdb-card mdb-comment">
+          <div class="mdb-comment-top">
+            <span class="mdb-comment-av" style="background:#2b4a66">林</span>
+            <div><b>林深见鹿</b><br><span>关注 2 年 · 生活记录爱好者</span></div>
+          </div>
+          <p>最喜欢的是他们的城市纪录系列，镜头不着急，也不煽情。看完会真的想去走一走那条街，这种后劲很难得。</p>
+          <span class="mdb-score"><span class="stars">★★★★★</span> 5.0</span>
+        </article>
+
+        <article class="mdb-card mdb-comment">
+          <div class="mdb-comment-top">
+            <span class="mdb-comment-av" style="background:#c98f2b">王</span>
+            <div><b>王大力学剪辑</b><br><span>新入驻创作者</span></div>
+          </div>
+          <p>作为刚起步的创作者，最打动我的是新人扶持机制。第一条视频就收到了编辑的逐条建议，不是模板回复，是真的在看内容。这一点必须给好评。</p>
+          <span class="mdb-score"><span class="stars">★★★★★</span> 5.0</span>
+        </article>
+
+        <article class="mdb-card mdb-comment">
+          <div class="mdb-comment-top">
+            <span class="mdb-comment-av" style="background:#5d7f99">徐</span>
+            <div><b>徐女士的周末</b><br><span>家居内容常看用户</span></div>
+          </div>
+          <p>改造类视频的信息量很足，预算和尺寸都写得清楚，跟着做了一次收纳，确实省了不少空间。就是希望后面能多出一点小户型版本。</p>
+          <span class="mdb-score"><span class="stars">★★★★☆</span> 4.5</span>
+        </article>
+
+        <article class="mdb-card mdb-comment">
+          <div class="mdb-comment-top">
+            <span class="mdb-comment-av" style="background:#8a6244">陶</span>
+            <div><b>陶艺一年级</b><br><span>手作学习者</span></div>
+          </div>
+          <p>手作慢实验合集是我的入门教材。阿檀会把失败的过程也放出来，这对我这种老失败的人来说太重要了，不会觉得自己很笨。</p>
+          <span class="mdb-score"><span class="stars">★★★★★</span> 5.0</span>
+        </article>
+
+        <article class="mdb-card mdb-comment">
+          <div class="mdb-comment-top">
+            <span class="mdb-comment-av" style="background:#17324a">码</span>
+            <div><b>码农老陈</b><br><span>偶尔观看 · 深度用户</span></div>
+          </div>
+          <p>下班路上会刷一刷。整体节奏偏慢，需要静下心看，但内容质量稳定。专题页做得不错，能顺着一条线看完，不用自己到处找。</p>
+          <span class="mdb-score"><span class="stars">★★★★☆</span> 4.0</span>
+        </article>
+
+        <article class="mdb-card mdb-comment">
+          <div class="mdb-comment-top">
+            <span class="mdb-comment-av" style="background:#c79b70">橙</span>
+            <div><b>橙子不加冰</b><br><span>一平米计划参与者</span></div>
+          </div>
+          <p>投稿流程比想象中顺，审核反馈也具体。上次投的短片进了月度展映，虽然没拿名次，但被认真评论的感觉很好，会继续参加。</p>
+          <span class="mdb-score"><span class="stars">★★★★★</span> 5.0</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- S7 辅助区：企业动态 + 合作墙 + FAQ -->
+  <section class="mdb-section" id="mdb-support" aria-labelledby="mdb-support-h2">
+    <div class="mdb-wrap">
+      <div class="mdb-section-head">
+        <div>
+          <span class="mdb-kicker">Updates · 动态与帮助</span>
+          <h2 class="mdb-h2" id="mdb-support-h2">麻豆不打烊 <em>官方动态</em> 与常见问题</h2>
+          <p class="mdb-lead">企业动态、合作品牌与帮助中心集中在此，方便你了解品牌近况并快速解决使用疑问。</p>
+        </div>
+      </div>
+
+      <h3 class="mdb-h3" style="margin-bottom:16px" id="mdb-news-h3">企业动态</h3>
+      <div class="mdb-news">
+        <article class="mdb-news-item">
+          <time datetime="2026-11-18">2026.11.18</time>
+          <h4>「不打烊夜话」第 12 期上线</h4>
+          <p>本期聚焦凌晨面包房，同步开放社区投票，选出你最想看的下一座城市。</p>
+        </article>
+        <article class="mdb-news-item">
+          <time datetime="2026-11-10">2026.11.10</time>
+          <h4>创作者训练营第三期开放报名</h4>
+          <p>为期四周的线上课程，覆盖选题、拍摄与剪辑，名额有限，官网报名通道已开启。</p>
+        </article>
+        <article class="mdb-news-item">
+          <time datetime="2026-10-28">2026.10.28</time>
+          <h4>平台上线高清片单功能</h4>
+          <p>支持按专题创建个人片单，并生成分享链接，方便社区成员互相推荐内容。</p>
+        </article>
+      </div>
+
+      <h3 class="mdb-h3" style="margin:38px 0 16px" id="mdb-partners-h3">合作品牌与伙伴</h3>
+      <div class="mdb-partners">
+        <div class="mdb-partner">城市书店计划</div>
+        <div class="mdb-partner">邻家手作工坊</div>
+        <div class="mdb-partner">慢行影像器材</div>
+        <div class="mdb-partner">本地咖啡合作社</div>
+      </div>
+
+      <h3 class="mdb-h3" style="margin:38px 0 16px" id="mdb-faq-h3">帮助中心 · 常见问题</h3>
+      <div class="mdb-faq">
+        <details>
+          <summary>如何向麻豆不打烊投稿？</summary>
+          <div class="ans">点击导航栏或首屏的「投稿入口」，填写作品信息并上传视频链接即可。建议先阅读投稿指南，了解画幅、时长与授权要求，审核通常在 3 个工作日内反馈。</div>
+        </details>
+        <details>
+          <summary>平台对视频画质有明确要求吗？</summary>
+          <div class="ans">建议提交 1080P 及以上清晰度的原创正版内容，画面稳定、声音清楚。教程类内容请尽量附上步骤说明，人物类内容需提供被拍摄者授权确认。</div>
+        </details>
+        <details>
+          <summary>「一平米计划」如何参与投票？</summary>
+          <div class="ans">每月展映期间，专题页会开放投票入口，社区成员每人每天可投一票。投票结果与编辑评审共同决定进入官方展映的作品名单。</div>
+        </details>
+        <details>
+          <summary>创作者训练营是否收费？</summary>
+          <div class="ans">目前训练营为品牌公益项目，不收取费用，但需要提交一份作品或创作计划作为筛选依据。名额有限，优先面向持续更新的新创作者。</div>
+        </details>
+        <details>
+          <summary>如何联系品牌进行合作？</summary>
+          <div class="ans">请通过页脚的合作邮箱提交需求说明，包含品牌背景、合作形式与预期目标。我们更倾向于内容共创与深度体验类合作，审核周期约为 5 个工作日。</div>
+        </details>
+        <details>
+          <summary>收藏的内容在哪里查看？</summary>
+          <div class="ans">点击任意视频卡片上的「收藏」按钮后，状态会立即保存。后续版本将上线个人片单页，目前可在专题页按标签快速回看。</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="mdb-footer">
+  <div class="mdb-wrap">
+    <div class="mdb-footer-grid">
+      <div>
+        <div class="f-brand">
+          <span class="mdb-brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M8 6l11 6-11 6V6z" fill="#e8b04b"/></svg>
+          </span>
+          <span>
+            <span class="mdb-brand-name">麻豆不打烊</span>
+            <span class="mdb-brand-sub">MADOU NEVER OFF</span>
+          </span>
+        </div>
+        <p>麻豆不打烊官方网站 · 持续运营中。我们深耕真实生活影像领域，为创作者与企业提供高品质内容生态，坚持原创正版与高清标准，做值得用户信赖的视频品牌社区。</p>
+      </div>
+      <div>
+        <h4>浏览内容</h4>
+        <ul>
+          <li><a href="#mdb-focus">本期焦点</a></li>
+          <li><a href="#mdb-videos">热门视频</a></li>
+          <li><a href="#mdb-topics">专题企划</a></li>
+          <li><a href="#mdb-authors">创作者名录</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>关于品牌</h4>
+        <ul>
+          <li><a href="#mdb-analysis">品牌解析</a></li>
+          <li><a href="#mdb-support">企业动态</a></li>
+          <li><a href="#mdb-comments">社区口碑</a></li>
+          <li><a href="#mdb-faq">帮助中心</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>参与共创</h4>
+        <ul>
+          <li><a href="#mdb-videos">观看与收藏</a></li>
+          <li><a href="#mdb-support">创作训练营</a></li>
+          <li><a href="#mdb-topics">共创专题</a></li>
+          <li><button type="button" class="mdb-act" style="padding-left:0;border:none;background:none" data-mdb-open-submit>投稿入口</button></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mdb-footer-bottom">
+      <span>© 2026 麻豆不打烊 · 版权所有 · 持续运营中</span>
+      <span>备案号：京ICP备2026000000号-1 · 官方发布 · 用户至上</span>
+    </div>
+  </div>
+</footer>
+
+<button class="mdb-to-top" id="mdb-to-top" type="button" aria-label="回到顶部">
+  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+<div class="mdb-toast" id="mdb-toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* 移动端导航折叠 */
+  var menuBtn = document.getElementById('mdb-menu-btn');
+  var nav = document.getElementById('mdb-nav');
+  if(menuBtn && nav){
+    menuBtn.addEventListener('click', function(){
+      var open = nav.classList.toggle('mdb-open');
+      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    nav.addEventListener('click', function(e){
+      if(e.target.tagName === 'A' && window.innerWidth <= 760){
+        nav.classList.remove('mdb-open');
+        menuBtn.setAttribute('aria-expanded','false');
+      }
+    });
+  }
+
+  /* Toast */
+  var toastEl = document.getElementById('mdb-toast');
+  var toastTimer = null;
+  function showToast(msg){
+    if(!toastEl) return;
+    toastEl.textContent = msg;
+    toastEl.classList.add('mdb-show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){
+      toastEl.classList.remove('mdb-show');
+    }, 2200);
+  }
+
+  /* 搜索提示 */
+  var searchInput = document.getElementById('mdb-search-input');
+  var searchBtn = document.getElementById('mdb-search-btn');
+  var searchHint = document.getElementById('mdb-search-hint');
+  var searchIndex = [
+    {t:'凌晨四点的厨房', k:'专题 城市探索'},
+    {t:'把出租屋改成深夜食堂', k:'视频 家居收纳'},
+    {t:'阿岚的镜头', k:'创作者 城市纪录'},
+    {t:'不打烊夜话', k:'专题 连载中'},
+    {t:'手作慢实验', k:'专题 手作DIY'},
+    {t:'一平米计划', k:'活动 报名中'}
+  ];
+  function runSearch(){
+    if(!searchInput || !searchHint) return;
+    var q = searchInput.value.trim();
+    if(!q){
+      searchHint.innerHTML = '试试搜索 <strong>夜话</strong>、<strong>手作</strong> 或 <strong>阿岚</strong>';
+      searchHint.classList.add('mdb-show');
+      return;
+    }
+    var hits = searchIndex.filter(function(item){
+      return item.t.indexOf(q) > -1 || item.k.indexOf(q) > -1;
+    });
+    if(hits.length){
+      searchHint.innerHTML = '找到 ' + hits.length + ' 条相关内容：' + hits.map(function(h){
+        return '<br>· ' + h.t + ' <span style="opacity:.65">(' + h.k + ')</span>';
+      }).join('');
+    }else{
+      searchHint.innerHTML = '未找到与「<strong>' + q.replace(/[<>&]/g,'') + '</strong>」完全匹配的条目，可尝试更短的关键词，或前往专题企划浏览。';
+    }
+    searchHint.classList.add('mdb-show');
+  }
+  if(searchBtn){
+    searchBtn.addEventListener('click', runSearch);
+  }
+  if(searchInput){
+    searchInput.addEventListener('keydown', function(e){
+      if(e.key === 'Enter'){ e.preventDefault(); runSearch(); }
+    });
+    searchInput.addEventListener('focus', function(){
+      if(searchHint && !searchHint.textContent.trim()){
+        searchHint.innerHTML = '试试搜索 <strong>夜话</strong>、<strong>手作</strong> 或 <strong>阿岚</strong>';
+        searchHint.classList.add('mdb-show');
+      }
+    });
+  }
+  document.addEventListener('click', function(e){
+    if(searchHint && !e.target.closest('.mdb-search')){
+      searchHint.classList.remove('mdb-show');
+    }
+  });
+
+  /* 点赞 / 收藏 */
+  document.addEventListener('click', function(e){
+    var likeBtn = e.target.closest('[data-mdb-like]');
+    if(likeBtn){
+      var on = likeBtn.classList.toggle('mdb-on');
+      likeBtn.textContent = on ? '已点赞' : '点赞';
+      showToast(on ? '已点赞，感谢支持' : '已取消点赞');
+      return;
+    }
+    var favBtn = e.target.closest('[data-mdb-fav]');
+    if(favBtn){
+      var fOn = favBtn.classList.toggle('mdb-on');
+      favBtn.textContent = fOn ? '已收藏' : '收藏';
+      showToast(fOn ? '已加入收藏' : '已取消收藏');
+      return;
+    }
+    var copyBtn = e.target.closest('[data-mdb-copy]');
+    if(copyBtn){
+      var link = '麻豆不打烊 · 精彩视频：' + (document.title.split(' - ')[0] || '视频社区');
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(link).then(function(){
+          showToast('链接已复制到剪贴板');
+        }).catch(function(){
+          showToast('复制失败，请手动分享');
+        });
+      }else{
+        showToast('当前环境不支持自动复制，请手动分享');
+      }
+      return;
+    }
+    var submitBtn = e.target.closest('[data-mdb-open-submit]');
+    if(submitBtn){
+      showToast('投稿通道已开启：请准备作品链接与 100 字简介');
+      var target = document.getElementById('mdb-support');
+      if(target){ target.scrollIntoView({behavior:'smooth', block:'start'}); }
+      return;
+    }
+  });
+
+  /* 回到顶部 */
+  var toTop = document.getElementById('mdb-to-top');
+  if(toTop){
+    toTop.addEventListener('click', function(){
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
+    window.addEventListener('scroll', function(){
+      if(window.scrollY > 480){
+        toTop.classList.add('mdb-show');
+      }else{
+        toTop.classList.remove('mdb-show');
+      }
+    }, {passive:true});
+  }
+
+  /* 数字滚动 */
+  var counters = document.querySelectorAll('[data-mdb-count]');
+  function animateCount(el){
+    var target = parseInt(el.getAttribute('data-mdb-count'), 10);
+    if(isNaN(target)) return;
+    var start = 0;
+    var dur = 1100;
+    var t0 = null;
+    function step(ts){
+      if(!t0) t0 = ts;
+      var p = Math.min((ts - t0) / dur, 1);
+      var val = Math.floor(start + (target - start) * (1 - Math.pow(1 - p, 3)));
+      el.textContent = val;
+      if(p < 1){ requestAnimationFrame(step); }
+      else{ el.textContent = target; }
+    }
+    requestAnimationFrame(step);
+  }
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          animateCount(en.target);
+          io.unobserve(en.target);
+        }
+      });
+    }, {threshold:.4});
+    counters.forEach(function(c){ io.observe(c); });
+  }else{
+    counters.forEach(function(c){ c.textContent = c.getAttribute('data-mdb-count'); });
+  }
+})();
+</script>
+</body>
+    </html>
